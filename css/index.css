@@ -1,0 +1,65 @@
+* {
+    font-family: "微软雅黑";
+}
+
+body {
+    overflow: hidden;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+.cstm-navbar-form {
+    margin: 0;
+    padding: 0;
+}
+
+.cstm-navbar-form div {
+    margin: 10px 10px;
+}
+
+.cstm-navbar-form .btn {
+    float: right;
+    margin: 10px;
+}
+
+.cstm-toolbar-landscape-pane {
+    float: right;
+    margin-top: 100px;
+}
+
+.cstm-toolbar-portrait-pane {
+    position: absolute;
+    top: 55px;
+}
+
+.cstm-dropdown-menu-landscape {
+    min-width: 50px;
+    right: 0px;
+    margin-left: 140px;
+}
+
+.cstm-dropdown-menu-portrait {
+    /*设置下拉框向右偏移*/
+    top: -3px;
+    left: 70px;
+}
+
+.cstm-content-pane {
+    text-align: center;
+}
+
+#h5frm {
+    width: 100%;
+}
+
+.cstm-footer-pane {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#pageIndexMenu li {
+    text-align: center;
+}
+#toolbarGroup button span{
+}

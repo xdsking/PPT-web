@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>齐览•云知视</title>
+    <link href="../CDN/lib/bootstrap-3.3.0-dist/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="css/production.min.css">-->
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<!--导航-->
+<div id="navbar" class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">齐览•云知视</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+            </ul>
+            <div class="navbar-right">
+            </div>
+
+            <form class="navbar-form navbar-right cstm-navbar-form" action="/session/create">
+                <div class="form-group">
+                    <input type="text" placeholder="用户名" name="email" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="密&nbsp;&nbsp;&nbsp;码" name="password" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-success cstm-sign-in">登&nbsp;&nbsp;录</button>
+                <input type="hidden" name="_csrf" value="null">
+            </form>
+
+        </div>
+    </div>
+</div>
+<!--导航 end-->
+<!--工具栏-->
+<div id="toolbarPane" class="cstm-toolbar-landscape-pane">
+    <div class="btn-toolbar" role="toolbar">
+        <div id="toolbarGroup" class="btn-group">
+            <button type="button" class="btn btn-default" title="帮助">
+                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+            </button>
+            <button id="syncView" type="button" class="btn btn-success" title="同步">
+                <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+            </button>
+            <button id="fullscreen" type="button" class="btn btn-default" title="全屏">
+                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+            </button>
+            <button id="prevPage" type="button" class="btn btn-default" title="上页">
+                <span class="glyphicon glyphicon-step-backward" aria-hidden="true"></span>
+            </button>
+            <!--<button type="button" class="btn btn-default" title="4/12">
+                <span aria-hidden="true">4/12</span>
+            </button>-->
+            <button  id="nextPage" type="button" class="btn btn-default" title="下页">
+                <span class="glyphicon glyphicon-step-forward" aria-hidden="true"></span>
+            </button>
+            <button id="currentPage" class="btn btn-default dropdown-toggle cstm-dropdown-menu" type="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <b>0/0</b>
+                <span class="caret"></span>
+            </button>
+            <ul id="pageIndexMenu" class="dropdown-menu cstm-dropdown-menu-landscape" aria-labelledby="dropdownMenu1">
+                <li value="1"><a href="#">第1页</a></li>
+                <li value="2"><a href="#">第2页</a></li>
+                <li value="3"><a href="#">第3页</a></li>
+                <li value="4"><a href="#">第4页</a></li>
+                <li value="5"><a href="#">第5页</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--工具栏 end-->
+<div class="cstm-content-pane">
+    <iframe id="h5frm" src="ppt.html?startSlide=0" frameborder="0" scrolling="no" allowfullscreen="true"
+            webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+</div>
+<div class="cstm-footer-pane">
+    <p>©2015-2016 岚枫软件设计工作室. 版权所有.</p>
+</div>
+</body>
+<!--[if lt IE 9]>
+<script src="../CDN/lib/bootstrap-3.3.0-dist/dist/js/html5shiv.js"></script>
+<script src="../CDN/lib/bootstrap-3.3.0-dist/dist/js/respond.min.js"></script>
+<![endif]-->
+<script src="../CDN/lib/jQuery/jQuery-1.11.1.js"></script>
+<script src="../CDN/lib/bootstrap-3.3.0-dist/dist/js/bootstrap.min.js"></script>
+<!--<script src="js/production.min.js"></script>-->
+<script src="../CDN/lib/bootstrap-3.3.0-dist/dist/js/ie10-viewport-bug-workaround.js"></script>
+<script src="js/index.js"></script>
+</html>
