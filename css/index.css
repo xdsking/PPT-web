@@ -24,13 +24,16 @@ body {
 }
 
 .cstm-toolbar-landscape-pane {
-    float: right;
-    margin-top: 100px;
+    position: absolute;
+    top: 105px;
+    right: 0px;
+    z-index: 2;
 }
 
 .cstm-toolbar-portrait-pane {
     position: absolute;
-    top: 55px;
+    bottom: 35px;
+    z-index: 2;
 }
 
 .cstm-dropdown-menu-landscape {
@@ -44,11 +47,36 @@ body {
     top: -3px;
     left: 70px;
 }
-
+.cstm-big-bang{
+    height: 140px;
+    background: linear-gradient(45deg,#020031 0,#6d3353 100%);
+}
+.cstm-big-bang-landscape{
+    display: none !important;
+}
+.cstm-big-bang:after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 140px;
+    left: 0;
+    background: url(../images/bs-docs-masthead-pattern.png) repeat center center;
+    opacity: .5;
+}
 .cstm-content-pane {
     text-align: center;
 }
-
+.title-pane{
+    position: absolute;
+    top: 70px;
+    left: 20px;
+    color: #f5f5f5;
+    font-size: 20px;
+    font-style: italic;
+    text-shadow: 0 1px 3px rgba(0,0,0,.4),0 0 30px rgba(0,0,0,.075);
+}
 #h5frm {
     width: 100%;
 }
@@ -56,6 +84,7 @@ body {
 .cstm-footer-pane {
     text-align: center;
     margin-top: 10px;
+    font-size: 12px;
 }
 
 #pageIndexMenu li {

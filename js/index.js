@@ -28,17 +28,17 @@ function initFrameSize() {
 function registerViewEvt() {
     var supportsOrientationChange = "onorientationchange" in window,
         orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
-    if (window.orientation == 0) {
+    if (window.orientation == 0||window.orientation == 180) {
         landscapeView();
     }
-    else if (window.orientation == 90) {
+    else if (window.orientation == 90||window.orientation == -90) {
         portraitView();
     }
     window.addEventListener(orientationEvent, function () {
-        if (window.orientation == 0) {
+        if (window.orientation == 0||window.orientation == 180) {
             landscapeView();
         }
-        else if (window.orientation == 90) {
+        else if (window.orientation == 90||window.orientation == -90) {
             portraitView();
         }
         initFrameSize();
@@ -51,6 +51,7 @@ function landscapeView() {
     $("#toolbarPane").addClass("cstm-toolbar-landscape-pane").removeClass("cstm-toolbar-portrait-pane");
     $("#toolbarGroup").addClass("btn-group").removeClass("btn-group-vertical");
     $("#pageIndexMenu").addClass("cstm-dropdown-menu-landscape").removeClass("cstm-dropdown-menu-portrait");
+    $(".cstm-big-bang").removeClass("cstm-big-bang-landscape");
 }
 /**
  * @summary 竖屏
@@ -59,6 +60,7 @@ function portraitView() {
     $("#toolbarPane").addClass("cstm-toolbar-portrait-pane").removeClass("cstm-toolbar-landscape-pane");
     $("#toolbarGroup").removeClass("btn-group").addClass("btn-group-vertical");
     $("#pageIndexMenu").addClass("cstm-dropdown-menu-portrait").removeClass("cstm-dropdown-menu-landscape");
+    $(".cstm-big-bang").addClass("cstm-big-bang-landscape");
 }
 /**
  * summary 设置当前页
@@ -68,6 +70,11 @@ function setCurrentPage(value){
     $("#currentPage b").html(value + "/" + global.pageLength);
     global.curPage=value;
     //TODO
+}
+function activateAnim(type,$node) {
+    $node.addClass(type + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+        $(this).removeClass(type + ' animated');
+    });
 }
 $(function () {
     //向下滚动,导航隐藏
@@ -79,6 +86,7 @@ $(function () {
     initFrameSize();
     registerViewEvt();
     setCurrentPage(global.curPage);
+    activateAnim("fadeInRight",$(".title-pane"));//fadeInRight//flipInX
     //同步
     $("#syncView").click(function () {
         $(this).toggleClass("btn-success btn-default");
