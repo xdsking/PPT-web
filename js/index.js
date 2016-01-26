@@ -13,7 +13,7 @@ var global = {
  */
 function initFrameSize() {
     var h5frm = $("#h5frm"), bodyHeight = document.body.clientHeight, liminalValue = global.portrait;
-    if (window.orientation && window.orientation == 90) {
+    if (window.orientation && window.orientation == 90||window.orientation == -90) {
         liminalValue = global.landscape;
     }
     h5frm.css("height", (bodyHeight - liminalValue) + "px");
