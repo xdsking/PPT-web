@@ -40,12 +40,16 @@ body {
     min-width: 50px;
     right: 0px;
     margin-left: 140px;
+    height: 200px;
+    overflow: auto;
 }
 
 .cstm-dropdown-menu-portrait {
     /*设置下拉框向右偏移*/
     top: -3px;
     left: 70px;
+    height: 200px;
+    overflow: auto;
 }
 .cstm-big-bang{
     height: 140px;
@@ -86,7 +90,6 @@ body {
     margin-top: 10px;
     font-size: 12px;
 }
-
 #pageIndexMenu li {
     text-align: center;
 }
