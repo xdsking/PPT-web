@@ -49,34 +49,58 @@
 <div class="cstm-big-bang">
     <p class="title-pane">云知视Yunzis 海内存知己 天涯若比邻</p>
 </div>
+<div class="cstm-content-pane">
+    <div class="cstm-left-action">
+        <button id="prevPageX" type="button" class="btn btn-lg btn-success cstm-btn-action" title="上页">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        </button>
+    </div>
+    <div class="cstm-right-action">
+        <button id="nextPageX" type="button" class="btn btn-lg btn-success cstm-btn-action" title="上页">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        </button>
+    </div>
+    <iframe id="h5frm" style="max-width: 100%;" src="ppt.html?startSlide=0" frameborder="0" scrolling="no"
+            allowfullscreen="true"
+            webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+</div>
 <!--工具栏-->
 <div id="toolbarPane" class="cstm-toolbar-landscape-pane">
     <div class="btn-toolbar" role="toolbar">
-        <div id="toolbarGroup" class="btn-group">
-            <button type="button" class="btn btn-default" title="帮助">
+        <div id="toolbarGroup" class="btn-group dropup">
+            <button type="button" class="btn btn-lg btn-default cstm-btn-action" title="帮助">
                 <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
             </button>
-            <button id="syncView" type="button" class="btn btn-success" title="同步">
+            <button id="syncView" type="button" class="btn  btn-lg btn-success cstm-btn-action" title="同步">
                 <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
             </button>
-            <button id="fullscreen" type="button" class="btn btn-default" title="全屏">
+            <button id="fullscreen" type="button" class="btn  btn-lg btn-default cstm-btn-action" title="全屏">
                 <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
             </button>
-            <button id="prevPage" type="button" class="btn btn-default" title="上页">
+            <button id="prevPage" type="button" class="btn  btn-lg btn-default cstm-btn-action" title="上页">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            </button>
+            <button id="prevAction" type="button" class="btn  btn-lg btn-default cstm-btn-action" title="上动作">
                 <span class="glyphicon glyphicon-step-backward" aria-hidden="true"></span>
             </button>
             <!--<button type="button" class="btn btn-default" title="4/12">
                 <span aria-hidden="true">4/12</span>
             </button>-->
-            <button id="nextPage" type="button" class="btn btn-default" title="下页">
+            <button id="nextAction" type="button" class="btn  btn-lg btn-default cstm-btn-action" title="下动作">
                 <span class="glyphicon glyphicon-step-forward" aria-hidden="true"></span>
             </button>
-            <button id="currentPage" class="btn btn-default dropdown-toggle cstm-dropdown-menu" type="button"
+            <button id="nextPage" type="button" class="btn  btn-lg btn-default cstm-btn-action" title="下页">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            </button>
+            <button id="currentPage"
+                    class="btn  btn-lg btn-default dropdown-toggle cstm-dropdown-menu cstm-btn-action" type="button"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <b>0/0</b>
                 <span class="caret"></span>
             </button>
-            <ul id="pageIndexMenu" class="dropdown-menu cstm-dropdown-menu-landscape" aria-labelledby="dropdownMenu1">
+
+            <ul id="pageIndexMenu" class="dropdown-menu cstm-dropdown-menu-landscape"
+                aria-labelledby="dropdownMenu1">
                 <li value="1"><a href="#">第1页</a></li>
                 <li value="2"><a href="#">第2页</a></li>
                 <li value="3"><a href="#">第3页</a></li>
@@ -121,10 +145,6 @@
     </div>
 </div>
 <!--工具栏 end-->
-<div class="cstm-content-pane">
-    <iframe id="h5frm" style="max-width: 100%;" src="ppt.html?startSlide=0" frameborder="0" scrolling="no" allowfullscreen="true"
-            webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
-</div>
 <div class="cstm-footer-pane">
     <p>©2015-2016 <a href="mailto:xdsking@163.com">岚枫软件设计工作室</a>. 版权所有.</p>
 
