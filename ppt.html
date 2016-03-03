@@ -8,6 +8,26 @@
             background-color: dimgray;
         }
     </style>
+    <script src="../CDN/lib/jQuery/jQuery-1.11.1.js"></script>
+    <script>
+        $(function () {
+            var flag;
+            var bottomToolbarPane = parent.global.toolbarPane;
+            $(window).mousemove(function () {
+
+                bottomToolbarPane.fadeIn();
+                if (flag) {
+                    window.clearTimeout(flag);
+                }
+                flag = window.setTimeout(function () {
+                    var isOverToolbar = parent.global.isOverToolbar;
+                    if (!isOverToolbar) {
+                        bottomToolbarPane.fadeOut();
+                    }
+                }, 2000);
+            });
+        });
+    </script>
 </head>
 <body>
 111111111111111111111111111111111111111111111111111111111111111111111111111111111111

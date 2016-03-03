@@ -1,13 +1,6 @@
 /**
  * Created by xuds on 2016/1/18.
  */
-
-var global = {
-    curPage: 1, /*ppt页码从1开始*/
-    landscape: 35, /*横屏阈值*/
-    portrait: 175, /*竖屏阈值*/
-    pageLength: 5/*ppt页数*/
-};
 //PC端移动端判断
 function IsPC() {
     var flag = true;
@@ -25,7 +18,7 @@ function IsPC() {
  * @summary 初始化“工具栏”事件
  */
 function initToolBarAction() {
-    var centerToolBarPane = $(".cstm-left-action,.cstm-right-action"), bottomToolBarPane = $("#toolbarPane"), bodyHeight = document.body.clientHeight, liminalValue = global.portrait;
+    var centerToolBarPane = $(".cstm-left-action,.cstm-right-action"), bottomToolBarPane = $(".cstm-content-pane"), bodyHeight = document.body.clientHeight, liminalValue = global.portrait;
     if (window.orientation && window.orientation == 90 || window.orientation == -90) {
         liminalValue = global.landscape;
     }
@@ -37,15 +30,21 @@ function initToolBarAction() {
         centerToolBarPane.mouseleave(function () {
             $(this).children().fadeOut();
         });
-        bottomToolBarPane.mouseenter(function () {
-            $(this).children().fadeIn();
-        });
         bottomToolBarPane.mouseleave(function () {
-            $(this).children().fadeOut();
+            $("#toolbarPane").fadeOut();
+        });
+
+        $("#toolbarPane").mouseover(function(){
+            console.log("鼠标已移入");
+            global.isOverToolbar=true;
+        });
+        $("#toolbarPane").mouseleave(function(){
+            global.isOverToolbar=false;
         });
         window.setTimeout(function () {
             centerToolBarPane.children().fadeOut();
-            bottomToolBarPane.children().fadeOut();
+            //bottomToolBarPane.children().fadeOut();
+            $("#toolbarPane").fadeOut();
         }, 2000);
     }
     $(window).resize(function () {
@@ -130,6 +129,7 @@ $(function () {
      showOnUpscroll: false
      });
      });*/
+    global.toolbarPane=$("#toolbarPane");
     initFrameSize();
     initToolBarAction();
     registerViewEvt();
